@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap');
+
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --white: hsl(0,0%,100%);
+    --light-pink: hsl(275,100%,97%);
+    --grayish-purple: hsl(292,16%,49%);
+    --dark-purple: hsl(292,42%,14%);
+}
+
+body{
+    background-color: var(--light-pink);
+    background-image: url(images/background-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family: 'Work Sans', sans-serif;
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+img, svg {
+    cursor: pointer;
+    background-color: transparent;
+    width: auto;
+    padding: 0;
+    display: block;
+}
+
+button:hover {
+    color:purple
+}
+
+.container {
+    background-color: var(--white);
+    max-width: 800px;
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: 1rem;
+}
+
+.faq-headline{
+    display: flex;
+    gap: 2rem;
+}
+
+.faq-headline h1 {
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.accordion-container .accordion-item:not(:last-child) {
+    border-bottom: 2px solid var(--light-pink);
+}
+
+.accordion-item {
+    margin-bottom: 0.5rem;
+}
+
+.accordion-item .icons img {
+    min-width: 30px;
+}
+
+  .accordion-item .icons .minus-icon {
+    display: none;
+}
+
+.accordion-description {
+    background-color: var(--white);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 200ms ease;
+    padding: 0 0.5rem;
+}
+
+.accordion-description p {
+    color: var(--grayish-purple);
+    padding: 1.5rem 0;
+}
+
+.accordion-btn {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--dark-purple);
+    padding: 1.2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.2s;
+    gap: 1rem;
+}
+
+.accordion-btn .icons {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.accordion-btn .btn-icon {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+.accordion-btn.active {
+    color: var(--grayish-purple);
+}
+
+@media (max-width: 540px) {
+    body {
+        background-image: url(images/background-pattern-mobile.svg);
+    }
+}
