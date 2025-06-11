@@ -8,14 +8,14 @@
 
 :root {
 
-    --white: hsl(0,0%,100%);
-    --light-pink: hsl(275,100%,97%);
-    --grayish-purple: hsl(292,16%,49%);
-    --dark-purple: hsl(292,42%,14%);
+    --white: hsl(0,0%,100%); 
+    --light-red: hsl(0,100%,97%);
+    --grayish-red: hsl(0,20%,50%);
+    --dark-red: hsl(0,68%,15%);
 }
 
 body{
-    background-color: var(--light-pink);
+    background-color: var(--light-red);
     background-image: url(images/background-pattern-desktop.svg);
     background-repeat: no-repeat;
     background-size: 100%;
@@ -56,7 +56,7 @@ button:hover {
 }
 
 .accordion-container .accordion-item:not(:last-child) {
-    border-bottom: 2px solid var(--light-pink);
+    border-bottom: 2px solid var(--light-red);
 }
 
 .accordion-item {
@@ -80,7 +80,7 @@ button:hover {
 }
 
 .accordion-description p {
-    color: var(--grayish-purple);
+    color: var(--grayish-red);
     padding: 1.5rem 0;
 }
 
@@ -92,7 +92,7 @@ button:hover {
     text-align: left;
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--dark-purple);
+    color: var(--dark-red);
     padding: 1.2rem 0;
     display: flex;
     justify-content: space-between;
@@ -117,7 +117,7 @@ button:hover {
 }
 
 .accordion-btn.active {
-    color: var(--grayish-purple);
+    color: var(--grayish-red);
 }
 
 @media (max-width: 540px) {
