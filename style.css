@@ -120,6 +120,12 @@ button:hover {
     color: var(--grayish-purple);
 }
 
+.accordion-btn:focus {
+    outline: 2px solid var(--grayish-purple);
+    outline-offset: 2px;
+}
+
+
 @media (max-width: 540px) {
     body {
         background-image: url(images/background-pattern-mobile.svg);
