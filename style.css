@@ -121,7 +121,7 @@ button:hover {
 }
 
 .accordion-btn:focus {
-    outline: 2px solid var(--grayish-purple);
+    outline: 2px solid var(--grayish-red);
     outline-offset: 2px;
 }
 
@@ -130,7 +130,7 @@ button:hover {
     margin-bottom: 1rem;
 }
 .keyboard-info small {
-    color: var(--grayish-purple);
+    color: var(--grayish-red);
     font-size: 0.9rem;
     opacity: 0.8;
 }
