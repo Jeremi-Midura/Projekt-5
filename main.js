@@ -1,11 +1,15 @@
 const accordionBtns = document.querySelectorAll('.accordion-btn');
+const accordionPanels = document.querySelectorAll('.accordion-description');
 
-accordionBtns.forEach(btn => {
+accordionBtns.forEach((btn, idx) => {
     btn.addEventListener('click', function () {
-        accordionBtns.forEach(otherBtn => {
+        accordionBtns.forEach((otherBtn, i) => {
+            const otherDesc = accordionPanels[i];
             if (otherBtn !== this) {
                 otherBtn.classList.remove('active');
-                const otherDesc = otherBtn.nextElementSibling;
+                otherBtn.setAttribute('aria-expanded', 'false');
+                otherDesc.setAttribute('aria-hidden', 'true');
+                otherDesc.hidden = true;
                 const otherPlus = otherBtn.querySelector('.plus-icon');
                 const otherMinus = otherBtn.querySelector('.minus-icon');
                 otherDesc.style.maxHeight = null;
@@ -15,18 +19,24 @@ accordionBtns.forEach(btn => {
         });
 
         this.classList.toggle('active');
-        const accordionDescription = this.nextElementSibling;
+        const idx = Array.from(accordionBtns).indexOf(this);
+        const accordionDescription = accordionPanels[idx];
         const plusIcon = this.querySelector('.plus-icon');
         const minusIcon = this.querySelector('.minus-icon');
+        const isOpen = this.classList.contains('active');
 
-        if (accordionDescription.style.maxHeight) {
-            accordionDescription.style.maxHeight = null;
-            plusIcon.style.display = 'block';
-            minusIcon.style.display = 'none';
-        } else {
+        this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        accordionDescription.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+        accordionDescription.hidden = !isOpen;
+
+        if (isOpen) {
             accordionDescription.style.maxHeight = accordionDescription.scrollHeight + 'px';
             plusIcon.style.display = 'none';
             minusIcon.style.display = 'block';
+        } else {
+            accordionDescription.style.maxHeight = null;
+            plusIcon.style.display = 'block';
+            minusIcon.style.display = 'none';
         }
     });
 });
